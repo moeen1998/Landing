@@ -29,7 +29,7 @@ function randumimage() { return Math.floor( (Math.random()*7)) + 1 ;};
 
 setInterval(()=>{
   console.log(randumimage()+'.jpg')
-  slider.style.backgroundImage = "url('../imgs/"+randumimage()+".jpg')";
+  slider.style.backgroundImage = "url(imgs/"+randumimage()+".jpg)";
 },10000)
 console.log(randumimage())
 
