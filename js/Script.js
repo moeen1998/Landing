@@ -181,6 +181,7 @@ let slider = document.querySelector('.slider');
 //generating randum image 
 function randumimage() { return Math.floor( (Math.random()*7)) + 1 ;};
 
+<<<<<<< HEAD
 function randomize(condition){
   if(condition){
     slideinterval = setInterval(()=>{
@@ -189,3 +190,12 @@ function randomize(condition){
   }
 }
 // /////////////////////////// End Slider ///////////////////////////
+=======
+setInterval(()=>{
+  console.log(randumimage()+'.jpg')
+  slider.style.backgroundImage = "url(imgs/"+randumimage()+".jpg)";
+},10000)
+console.log(randumimage())
+
+// /////////////////////////// End Slider ///////////////////////////
+>>>>>>> 7e6056304694585f49f118c39bc177d961a686ba
