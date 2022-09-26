@@ -123,6 +123,36 @@ body{
 }
 /* End slider section */
 
+/* Start Shuffle */
+.shuffle .controles ul{
+  list-style: none;
+  text-align: center;
+}
+.shuffle .controles ul li{
+  display: inline-block;
+  padding: 5px 20px;
+  border: 1px solid var(--main-color);
+  margin-right: 10px;
+  border-radius: 10px;
+
+}
+.shuffle .controles .category,
+.shuffle .controles ul li:hover{
+  background-color: var(--main-color);  
+  color: #fff;
+  cursor: pointer;
+}
+.shuffle .child{
+  overflow: hidden;
+  border-radius: 15px!important;
+}
+.shuffle .child .head{
+  color: var(--main-color);
+  background-color: #343a40;
+  font-style: italic;
+}
+.hidden{opacity: 0;display: none;}
+/* End Shuffle */
 
 
 

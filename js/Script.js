@@ -181,21 +181,77 @@ let slider = document.querySelector('.slider');
 //generating randum image 
 function randumimage() { return Math.floor( (Math.random()*7)) + 1 ;};
 
-<<<<<<< HEAD
 function randomize(condition){
   if(condition){
     slideinterval = setInterval(()=>{
-      slider.style.backgroundImage = "url('imgs/"+randumimage()+".jpg')";
+      slider.style.backgroundImage = "url(imgs/"+randumimage()+".jpg)";
     },5000)
   }
 }
 // /////////////////////////// End Slider ///////////////////////////
-=======
-setInterval(()=>{
-  console.log(randumimage()+'.jpg')
-  slider.style.backgroundImage = "url(imgs/"+randumimage()+".jpg)";
-},10000)
-console.log(randumimage())
 
-// /////////////////////////// End Slider ///////////////////////////
->>>>>>> 7e6056304694585f49f118c39bc177d961a686ba
+
+// /////////////////////////// Start shuffle ///////////////////////////
+
+//the main container 
+let controles = document.querySelectorAll('.controles ul li');
+let childs = document.querySelectorAll('.child');
+
+controles.forEach((el) => {
+  el.addEventListener('click',(e) => {
+    e.target.parentElement.querySelector('.category').classList.remove('category')
+    e.target.classList.add('category')
+    // console.log(e.target.textContent, e.target.dataset.category)
+    childs.forEach((child) => {
+      if(e.target.dataset.category === "all"){
+        // console.log( )
+
+        // child.parentElement.classList.remove('hidden')
+
+        fadeInEffect(child.parentElement)
+        // child.parentElement.style.opacity = 1;
+        // child.parentElement.style.display = 'block';
+      }
+      else if(child.dataset.type !== e.target.dataset.category ){
+        // child.parentElement.classList.add('hidden')
+        fadeOutEffect(child.parentElement)
+        // child.parentElement.style.opacity = 0;
+        // child.parentElement.style.display = 'none';
+      }
+      else{
+        // child.parentElement.classList.remove('hidden')
+        fadeInEffect(child.parentElement)
+        // child.parentElement.style.opacity = 1;
+        // child.parentElement.style.display = 'block';
+      }
+    })
+  })
+})
+// /////////////////////////// End shuffle ///////////////////////////
+// efficts
+function fadeOutEffect(target) {
+  let outeffict = setInterval(function () {
+    if (!target.style.opacity) {
+      target.style.opacity = 1;
+  }
+    if (target.style.opacity > 0) {
+      target.style.opacity -= 0.1;
+    } else {
+      target.style.display = 'none';
+      clearInterval(outeffict);
+    }
+  }, 20);
+}
+function fadeInEffect(target) {
+  let ineffict = setInterval(function () {
+    if (target.style.opacity) {
+      target.style.opacity = 1;
+    }
+    if (target.style.opacity < 1) {
+      target.style.opacity += 0.1;
+    } else {
+      target.style.display = 'block';
+      clearInterval(ineffict);
+    }
+  }, 20);
+}
