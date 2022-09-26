@@ -189,7 +189,6 @@ function randomize(condition){
   }
 }
 // /////////////////////////// End Slider ///////////////////////////
-=======
 setInterval(()=>{
   console.log(randumimage()+'.jpg')
   slider.style.backgroundImage = "url(imgs/"+randumimage()+".jpg)";
@@ -197,4 +196,3 @@ setInterval(()=>{
 console.log(randumimage())
 
 // /////////////////////////// End Slider ///////////////////////////
->>>>>>> 7e6056304694585f49f118c39bc177d961a686ba
