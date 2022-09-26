@@ -181,7 +181,6 @@ let slider = document.querySelector('.slider');
 //generating randum image 
 function randumimage() { return Math.floor( (Math.random()*7)) + 1 ;};
 
-<<<<<<< HEAD
 function randomize(condition){
   if(condition){
     slideinterval = setInterval(()=>{
