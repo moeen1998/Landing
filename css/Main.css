@@ -154,5 +154,41 @@ body{
 .hidden{opacity: 0;display: none;}
 /* End Shuffle */
 
+/* Start Skills Section */
+.ourskills .skill{
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 22px;
+}
+.ourskills .skill .text{
+  width: 150px;
+  display: inline-block;
+  color: var(--main-color);
+  padding-left: 15px;
+}
+.ourskills .skill .par{
+  width: 100%;
+  height: 27px;
+  display: inline-block ;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.ourskills .skill .progress{
+  width: 0;
+  height: 27px;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0px 5px 5px 0px;
+  background-color: var(--main-color);
+  transition: .5s;
+}
+/* End Skills Section */
+
 
 

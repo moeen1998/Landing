@@ -200,34 +200,23 @@ controles.forEach((el) => {
   el.addEventListener('click',(e) => {
     e.target.parentElement.querySelector('.category').classList.remove('category')
     e.target.classList.add('category')
-    // console.log(e.target.textContent, e.target.dataset.category)
     childs.forEach((child) => {
       if(e.target.dataset.category === "all"){
-        // console.log( )
-
-        // child.parentElement.classList.remove('hidden')
-
         fadeInEffect(child.parentElement)
-        // child.parentElement.style.opacity = 1;
-        // child.parentElement.style.display = 'block';
       }
       else if(child.dataset.type !== e.target.dataset.category ){
-        // child.parentElement.classList.add('hidden')
         fadeOutEffect(child.parentElement)
-        // child.parentElement.style.opacity = 0;
-        // child.parentElement.style.display = 'none';
       }
       else{
-        // child.parentElement.classList.remove('hidden')
         fadeInEffect(child.parentElement)
-        // child.parentElement.style.opacity = 1;
-        // child.parentElement.style.display = 'block';
       }
     })
   })
 })
 // /////////////////////////// End shuffle ///////////////////////////
-// efficts
+
+// /////////////////////////// Start efficts ///////////////////////////
+
 function fadeOutEffect(target) {
   let outeffict = setInterval(function () {
     if (!target.style.opacity) {
@@ -254,3 +243,21 @@ function fadeInEffect(target) {
     }
   }, 20);
 }
+// /////////////////////////// Start efficts ///////////////////////////
+
+// /////////////////////////// Start skills ///////////////////////////
+
+let skills = document.querySelectorAll('.par');
+let section = document.querySelector('.ourskills')
+window.onscroll= function(){
+  if(this.pageYOffset >= (section.offsetTop - 150)){
+    console.log(section.offsetTop)
+    skills.forEach((skill) => {
+      skill.childNodes[1].style.width = skill.dataset.progress
+    })
+  }
+};
+
+
+
+// /////////////////////////// End skills ///////////////////////////
