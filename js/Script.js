@@ -250,7 +250,7 @@ function fadeInEffect(target) {
 let skills = document.querySelectorAll('.par');
 let section = document.querySelector('.ourskills')
 window.onscroll= function(){
-  if(this.pageYOffset >= (section.offsetTop - 150)){
+  if(this.pageYOffset >= (section.offsetTop - 300)){
     console.log(section.offsetTop)
     skills.forEach((skill) => {
       skill.childNodes[1].style.width = skill.dataset.progress

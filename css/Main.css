@@ -4,7 +4,6 @@
   --main-size: 16px;
 }
 body{
-  min-height: 7000px; /* for testing */
   font-size: var(--main-size);
 }
 *{
@@ -191,4 +190,10 @@ body{
 /* End Skills Section */
 
 
+/* Start footer */
 
+footer ul{
+  list-style: none;
+}
+footer ul i{margin-right: 5px;}
+/* End footer */
