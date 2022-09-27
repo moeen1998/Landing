@@ -246,18 +246,32 @@ function fadeInEffect(target) {
 // /////////////////////////// Start efficts ///////////////////////////
 
 // /////////////////////////// Start skills ///////////////////////////
-
+// progress bar section
 let skills = document.querySelectorAll('.par');
 let section = document.querySelector('.ourskills')
-window.onscroll= function(){
-  if(this.pageYOffset >= (section.offsetTop - 300)){
-    console.log(section.offsetTop)
+window.onscroll = function(){
+  if(this.pageYOffset >= (section.offsetTop - 600)){
     skills.forEach((skill) => {
       skill.childNodes[1].style.width = skill.dataset.progress
     })
   }
 };
-
-
-
 // /////////////////////////// End skills ///////////////////////////
+
+// /////////////////////////// Start Images ///////////////////////////
+
+let imgs = document.querySelectorAll('.img');
+let overlay = document.querySelector('.iamge-overlay')
+let imageoverlay = document.querySelector('.iamge-overlay img')
+
+let exit = document.querySelector('.exit')
+exit.addEventListener('click',(e) => {overlay.classList.add('d-none')})
+
+imgs.forEach((img)=>{
+  img.addEventListener('click',(e) => {
+    imageoverlay.src = e.target.src;
+    overlay.classList.remove('d-none')
+  })
+})
+
+// /////////////////////////// End Images ///////////////////////////
