@@ -247,10 +247,9 @@ h2{
 }
 /* Start Iamges  */
 
-/* Start time line */
+/* Start timeline */
 
 .timeline{
-  min-height: 1500px;
   background-color: #ccc;
 }
 .timeline .timeline-content{
@@ -323,9 +322,80 @@ h2{
   left: calc( -3% - 20px);
   border-color: transparent #fff transparent transparent;
 }
-        /* end of the arrows */
+@media( max-width: 576px ){
+  .timeline .timeline-content::after{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 2px);
+    top: 0;
+    position: absolute;
+  }
+  .timeline .timeline-content .year{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-weight: bold;
+  }
+  .timeline .timeline-content .right,
+  .timeline .timeline-content .left{
+    z-index: 3;
+    width: 99%;
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 80px !important;
+  }
+  
+          /* drowing the polits */
+  .timeline .timeline-content .right::before,
+  .timeline .timeline-content .left::after{
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 5px);
+    z-index: 2;
+    border-radius: 50%  ;
+    border: 3px solid var(--main-color);
+  }
+  .timeline .timeline-content .right::before{
+    left: calc(50% - 10px);
+  }
+        /* drowing the polits */
+  
+       /* drowing the arrow */
+  .timeline .timeline-content .left::before,
+  .timeline .timeline-content .right::after{
+    content: "";
+    position: absolute;
+    top: -30px;
+    border-width: 20px;
+    width: 20px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    left: calc(50% - 17px);
+  }
+  .timeline .timeline-content .left::before{ 
+    left: calc(50% - 17px);
+    
+  }
+  .timeline .timeline-content .right::after{  
+    left: calc(50% - 22px);
+  }
+          /* end of the arrows */
 
-
+}
 
 
 /* End time line */
