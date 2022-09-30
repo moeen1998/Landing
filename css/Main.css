@@ -13,6 +13,15 @@ body{
 *{
   text-transform: capitalize;
 }
+
+.right{float: right;}
+.left{float: left;}
+.clear{clear: both;}
+h2{
+  color: var(--main-color);
+  font-weight: bold;
+  font-style: italic;
+}
 /* Start setting section */
 .setting {
   position: fixed;
@@ -155,12 +164,14 @@ body{
 .shuffle .child .head{
   color: var(--main-color);
   background-color: #343a40;
-  font-style: italic;
 }
 .hidden{opacity: 0;display: none;}
 /* End Shuffle */
 
 /* Start Skills Section */
+.ourskills{
+  background-color: #ccc;
+}
 .ourskills .skill{
   border: 1px solid var(--main-color);
   border-radius: 5px;
@@ -235,6 +246,92 @@ body{
   cursor: pointer;
 }
 /* Start Iamges  */
+
+/* Start time line */
+
+.timeline{
+  min-height: 1500px;
+  background-color: #ccc;
+}
+.timeline .timeline-content{
+  position: relative;
+  overflow: hidden;
+}
+.timeline .timeline-content::after{
+  content: "";
+  width: 4px;
+  height: 100%;
+  background-color: var(--main-color);
+  left: calc(50% - 2px);
+  top: 0;
+  position: absolute;
+}
+.timeline .timeline-content .year{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: bold;
+}
+.timeline .timeline-content .right,
+.timeline .timeline-content .left{
+  width: 46%;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #fff;
+  position: relative;
+}
+
+        /* drowing the polits */
+.timeline .timeline-content .right::before,
+.timeline .timeline-content .left::after{
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  top: 30px;
+  z-index: 2;
+  border-radius: 50%  ;
+  border: 3px solid var(--main-color);
+}
+.timeline .timeline-content .left::after{right: calc( -8% - 11px);}
+.timeline .timeline-content .right::before{
+  left: calc( -8% - 11px);
+}
+      /* drowing the polits */
+
+     /* drowing the arrow */
+.timeline .timeline-content .left::before,
+.timeline .timeline-content .right::after{
+  content: "";
+  position: absolute;
+  top: 18px;
+  border-width: 20px;
+  border-style: solid;
+}
+.timeline .timeline-content .left::before{ 
+  right: calc( -3% - 20px);
+  border-color: transparent transparent transparent #fff;
+}
+.timeline .timeline-content .right::after{  
+  left: calc( -3% - 20px);
+  border-color: transparent #fff transparent transparent;
+}
+        /* end of the arrows */
+
+
+
+
+/* End time line */
+
+
+
 
 /* Start footer */
 
